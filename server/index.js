@@ -5,9 +5,13 @@ const userRoute = require("./routes/userRoutes.js")
 dotenv.config({
     path: './.env'
 })
+const cors = require("cors");
+
 
 const app = express();
+app.use(cors());
 app.use(express.json());
+
 
 mongoose.connect(`${process.env.MONGO}mernPrac`)
 .then(() => {
