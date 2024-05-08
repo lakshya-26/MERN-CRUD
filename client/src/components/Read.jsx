@@ -59,7 +59,7 @@ const Read = () => {
               <span className="card-link" onClick={() => handleDelete(e._id)}>
                 Delete
               </span>
-              <Link to="/update" className="card-link">
+              <Link to={`/${e._id}`} className="card-link">
                 Edit
               </Link>
             </div>

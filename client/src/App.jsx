@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Create />} />
             <Route exact path="/all" element={<Read />} />
-            <Route exact path="/update" element={<Update />} />
+            <Route exact path="/:id" element={<Update />} />
           </Routes>
         </BrowserRouter>
       </div>

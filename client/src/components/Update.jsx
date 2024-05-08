@@ -25,7 +25,7 @@ const Update = () => {
     const updatedUser = { fname, email, age };
     console.log(updatedUser);
     const response = await fetch(`http://localhost:4000/edit/${id}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -35,7 +35,7 @@ const Update = () => {
     if (response.ok) {
       console.log("updated result..", result);
       setError("");
-      navigate("/read");
+      navigate("/all");
     }
     if (!response.ok) {
       console.log(response.error);
@@ -48,38 +48,38 @@ const Update = () => {
   }, []);
 
   return (
-    <div class="container my-2">
-      <h1 class="h1 text-center">Edit Data</h1>
-      {error && <div class="alert alert-danger"> {error} </div>}
+    <div className="container my-2">
+      <h1 className="h1 text-center">Edit Data</h1>
+      {error && <div className="alert alert-danger"> {error} </div>}
       <form className="form" onSubmit={handleUpdate}>
-        <div class="mb-3">
-          <label class="form-label">Name</label>
+        <div className="mb-3">
+          <label className="form-label">Name</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             value={fname}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label">Email address</label>
+        <div className="mb-3">
+          <label className="form-label">Email address</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label">Age</label>
+        <div className="mb-3">
+          <label className="form-label">Age</label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
         </div>
-        <button type="submit" class="btn btn-info">
+        <button type="submit" className="btn btn-info">
           Update
         </button>
       </form>
